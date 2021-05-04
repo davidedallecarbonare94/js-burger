@@ -53,7 +53,7 @@ document.getElementById("calc_butt").addEventListener("click", function () {
     console.log(totalPriceWithoutDiscounts);
     //creo un array con una lista di discounts
 
-    var discountList = ["darthvader", "maythe4th", "iamyourfather", "deathstar"]
+    var discountList = ["darthvader", "maythe4th", "iamyourfather", "deathstar", "alessandra20"]
  //verifico se il coupon inserito è nella lista di coupon validi
     var insertedCoupon = document.getElementById("coupon").value
     console.log(insertedCoupon);
