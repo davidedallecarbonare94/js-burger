@@ -57,17 +57,22 @@ document.getElementById("calc_butt").addEventListener("click", function () {
  //verifico se il coupon inserito è nella lista di coupon validi
     var insertedCoupon = document.getElementById("coupon").value
     console.log(insertedCoupon);
-    var discountApplied = totalPriceWithoutDiscounts * 0.25.toFixed(2);
+    var discountApplied = totalPriceWithoutDiscounts * 0.25;
     console.log(discountApplied);
-    var j = 0;
-    while (j < insertedCoupon.length) {
-        if (discountList === insertedCoupon.length) {
-           return document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts - discountApplied;
-        } else {
-           return document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts;
+    var validDiscount = false;
+    for (var j = 0; j < discountList.length; j++) {
+        var discEl = discountList[j];
+        if (discEl === insertedCoupon) {
+            validDiscount = true;
         }
-    }j++
+    }
+    if (validDiscount) {
+        document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts - discountApplied.toFixed(2)
+    } else {
+        document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts.toFixed(2)
     
+    }
+        
 })
 
 
