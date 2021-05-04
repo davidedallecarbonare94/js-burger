@@ -54,16 +54,16 @@ document.getElementById("calc_butt").addEventListener("click", function () {
     //creo un array con una lista di discounts
 
     var discountList = ["darthvader", "maythe4th", "iamyourfather", "deathstar"]
- 
+ //verifico se il coupon inserito è nella lista di coupon validi
     var insertedCoupon = document.getElementById("coupon").value
     console.log(insertedCoupon);
-
+    var discountApplied = (totalPriceWithoutDiscounts*0.25).tofixed(2);
     var j = 0;
     while (j < insertedCoupon.length) {
         if (discountList == insertedCoupon) {
-            return totalPriceWithoutDiscounts -= totalPriceWithoutDiscounts * 0.25
+            return document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts - discountApplied;
         } else {
-            return totalPriceWithoutDiscounts
+            return document.getElementById("risultato").innerHTML = totalPriceWithoutDiscounts;
         }
     }j++
     
